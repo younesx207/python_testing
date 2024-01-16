@@ -1,5 +1,5 @@
 import pytest
-import RestaurantMenu
+from RestaurantMenu import RestaurantMenu
 def test_get_menu_valid():
     rg = RestaurantMenu()
     rg.add_restaurant("Cafe Mocha")

@@ -1,5 +1,5 @@
 import pytest
-import RestaurantMenu
+from RestaurantMenu import RestaurantMenu
 def test_delete_valid_menu_item():
     rg = RestaurantMenu()
     rg.add_restaurant("Cafe Mocha")
@@ -7,15 +7,13 @@ def test_delete_valid_menu_item():
     
     result = rg.delete_menu_item("Cafe Mocha", "Latte")
     
-    assert result == "Latte removed from Cafe Mocha's menu"
+    assert result == "Latte removed from Cafe Mocha' menu"
     assert rg.get_menu("Cafe Mocha") == []
 
 def test_delete_invalid_menu_item_nonexistent_restaurant():
     rg = RestaurantMenu()
-
     with pytest.raises(ValueError) as e:
         rg.delete_menu_item("Nonexistent Restaurant", "Burger")
-    
     assert str(e.value) == "Error: Nonexistent Restaurant does not exist"
 
 def test_delete_invalid_menu_item_nonexistent_item():

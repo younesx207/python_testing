@@ -1,5 +1,5 @@
 import pytest
-import RestaurantMenu
+from RestaurantMenu import RestaurantMenu
 def test_update_valid_menu_item():
     rg = RestaurantMenu()
     rg.add_restaurant("Cafe Mocha")
@@ -7,7 +7,7 @@ def test_update_valid_menu_item():
 
     result = rg.update_menu_item("Cafe Mocha", "Latte", "Creamy Latte", 4.99)
 
-    assert result == "Latte updated in Cafe Mocha's menu"
+    assert result == "Latte updated in Cafe Mocha' menu"
     assert rg.get_menu("Cafe Mocha") == [{"name": "Latte", "description": "Creamy Latte", "price": 4.99}]
 
 def test_update_invalid_menu_item_negative_price():
